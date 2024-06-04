@@ -1,0 +1,16 @@
+name: C++ Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up C++ environment
+      uses: actions/setup-cpp@v1
+
+    - name: Compile C++ program
+      run: g++ hello_world.cpp -o hello_world
